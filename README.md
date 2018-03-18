@@ -56,6 +56,14 @@ See also: Car.cpp 106-132 for lane change logic
 ```
 #### Some image samples
 
+![Driving](images/start.png)
+
+![Going](images/path2.png)
+
+![Fast](images/path1.png)
+
+![End](images/complete.png)
+
 ##### Spline/Map:
 
 I have used the spline.h script; splines instead of polynomials (Udacity lesson tips). Becuase of this our map is based on interpolate points taken from the highway_map dataset. 
