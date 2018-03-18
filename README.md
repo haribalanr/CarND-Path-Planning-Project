@@ -14,6 +14,47 @@ Goal of this project is to implement a path planning module that drives a car in
 	-	Car followed lanes and changed lanes as and when needed safely
    
 
+### Velocity: 
+ The target velocity of the our car is set depending on the state of the vehicle.
+ When the lanes are free ahead and no slow moving vehicles ahead then the target velocity was set at 49.5mph (50mph-.5mph for safe speed limit).
+ When the our car gets closer to other vehicle ahead of it, it changes the target speed to the vehicle ahead and maintains a safe distance. 
+ The acceleration of out vehicle to controlled using the PID code in main.cpp under:
+```
+main.cpp - line 267-277
+...
+            if (my_car.is_close)
+            {
+              speed_limit = my_car.other_car_vel;  //maintain to same lane
+            } else {
+              speed_limit = 49.5;
+            }
+            double vel_error = ref_vel - speed_limit;
+            vel_control.UpdateError(vel_error);
+            double new_vel = vel_control.TotalError();
+            ref_vel += new_vel;
+...
+```
+
+#### Lane Discipline:
+Vehicle is able to drive safely and avoid occupied lanes on the left and on the right. At each point the algorightm check for others cars ahead on the same lane, cars in the adjacent lanes and the safe-space ahead and behind our vehicle. Our vehicle only changes lane if there are no vehicle within the set safety ranges ahead of and behind. 
+Lane 0 is left most lane
+Lane 1 is middle 
+Lane 2 is Right most lane
+```
+so, this logic will set the left/right lane to false if the car is in 0 or 2 respectively.
+This code can be found on the Car.cpp. line: 31-38
+  if (lane==0)
+  {
+    left_is_free = false;
+  }
+  if (lane==2)
+  {
+    right_is_free = false;
+  }
+
+See also: Car.cpp 106-132 for lane change logic
+```
+
    
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
