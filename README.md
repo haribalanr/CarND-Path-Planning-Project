@@ -1,5 +1,19 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
+
+### Introduction
+
+Goal of this project is to implement a path planning module that drives a car in a smooth and safe trajectories on a simulator highway (provided by Udacity - Simulator section). Simulator sends telemetry info such as the speed and position of the car and sensor fusion information about other cars in the highway. The path planner uses these information and provides a safe, feasible and smooth trajectories which do not break rules such as speed limit, and also provides a good passenger experience by not accelrating over 10 m/s^2 and jerk that is greater than 50 m/s^3.
+
+#### Results:
+	-	Code for the module compiled without errors
+	- 	Car drove on the highway without incident over 4.32 miles 
+	-	No speed limit was exceeded 
+	-	Max Acceleration and Jerk were not exceeded
+	-	Car did not involve in any collisions
+	-	Car followed lanes and changed lanes as and when needed safely
+   
+
    
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
