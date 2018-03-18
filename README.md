@@ -54,7 +54,15 @@ This code can be found on the Car.cpp. line: 31-38
 
 See also: Car.cpp 106-132 for lane change logic
 ```
+#### Some image samples
 
+##### Spline/Map:
+
+I have used the spline.h script; splines instead of polynomials (Udacity lesson tips). Becuase of this our map is based on interpolate points taken from the highway_map dataset. 
+
+##### Conclusion:
+
+The Car is completely able to complete 4.5 miles while driving at top speed of 40.5mph when it is possible and avoiding any kind of collisions or unsafe maneuvers. There are lots of future improvements and challenges that can be added to this module and in general over all self-driving cars project works such as complete behavior planner based on classification algorithms while considering future/predict maneuvers of cars, non-vehicle objecs, etc and projected smooth trajectories.
    
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
