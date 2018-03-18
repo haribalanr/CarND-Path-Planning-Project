@@ -58,9 +58,9 @@ See also: Car.cpp 106-132 for lane change logic
 
 ![Driving](images/start.png)
 
-![Going](images/path2.png)
-
 ![Fast](images/path1.png)
+
+![Going](images/path2.png)
 
 ![End](images/complete.png)
 
